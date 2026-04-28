@@ -8,40 +8,17 @@
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <style>
-body{
-  margin:0;
-  font-family:-apple-system;
-  background:#f5f5f5;
-}
-video{
-  width:100%;
-  background:#000;
-}
-.list{
-  padding:10px;
-}
-.item{
-  background:#fff;
-  padding:12px;
-  margin-bottom:8px;
-  border-radius:10px;
-  display:flex;
-  justify-content:space-between;
-}
-button{
-  background:#007aff;
-  color:#fff;
-  border:none;
-  padding:6px 10px;
-  border-radius:6px;
-}
+body{margin:0;font-family:-apple-system;background:#f5f5f5}
+video{width:100%;background:#000}
+.list{padding:10px}
+.item{background:#fff;padding:12px;margin-bottom:8px;border-radius:10px;display:flex;justify-content:space-between}
+button{background:#007aff;color:#fff;border:none;padding:6px 10px;border-radius:6px}
 </style>
 </head>
 
 <body>
 
 <video id="video" controls playsinline></video>
-
 <div class="list" id="list"></div>
 
 <script>
@@ -51,10 +28,6 @@ const list = document.getElementById('list');
 let hls;
 let current = 0;
 
-/*
-✅ 这里我直接给你一组“真实可用”的 VID（同一节目连续几集）
-👉 这是唯一稳定方案：不用解析页面
-*/
 const episodes = [
   {title:"第1集", vid:"VIDA5pha2ONXCjrQsZjRAiKA210114"},
   {title:"第2集", vid:"VIDA5pha2ONXCjrQsZjRAiKA210115"},
@@ -63,19 +36,32 @@ const episodes = [
   {title:"第5集", vid:"VIDA5pha2ONXCjrQsZjRAiKA210118"}
 ];
 
-// 获取真实播放地址
+// 🔥 关键修复：多字段兼容
 async function getUrl(vid){
-  const api = `https://vdn.apps.cntv.cn/api/getHttpVideoInfo.do?pid=${vid}`;
-  const res = await fetch(api);
-  const data = await res.json();
-  return data.hls_url;
+  try{
+    const api = `https://vdn.apps.cntv.cn/api/getHttpVideoInfo.do?pid=${vid}`;
+    const res = await fetch(api);
+    const data = await res.json();
+
+    console.log("接口返回:", data);
+
+    return data.hls_url || data.hls || data.url;
+  }catch(e){
+    alert("获取视频地址失败");
+    return null;
+  }
 }
 
-// 播放
+// 🔥 播放
 async function play(i){
   current = i;
 
   const url = await getUrl(episodes[i].vid);
+
+  if(!url){
+    alert("该集无法播放（央视接口限制）");
+    return;
+  }
 
   if(hls){ hls.destroy(); }
 
@@ -87,10 +73,14 @@ async function play(i){
     video.src = url;
   }
 
-  video.play();
+  // 🔥 强制播放（解决无反应）
+  video.muted = false;
+  video.play().catch(()=>{
+    alert("点击视频区域再试一次");
+  });
 }
 
-// 渲染列表
+// 渲染
 episodes.forEach((ep,i)=>{
   const div = document.createElement('div');
   div.className = 'item';
