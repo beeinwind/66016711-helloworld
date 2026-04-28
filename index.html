@@ -1,154 +1,126 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>王立群读《史记》之秦始皇 - CCTV官方全47集独立直链播放列表</title>
-    <style>
-        body {
-            font-family: "Microsoft YaHei", sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        header {
-            background: linear-gradient(to right, #b71c1c, #8d1b1b);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.4em;
-        }
-        header p {
-            margin: 12px 0 0 0;
-            font-size: 1.2em;
-            opacity: 0.95;
-        }
-        .playlist-section {
-            padding: 30px;
-        }
-        .list {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 12px;
-        }
-        .list ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .list li {
-            padding: 16px 20px;
-            border-bottom: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s;
-        }
-        .list li:hover {
-            background: #fff;
-        }
-        .list li:last-child {
-            border-bottom: none;
-        }
-        .list a {
-            color: #b71c1c;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            padding: 10px 28px;
-            background: #b71c1c;
-            color: white;
-            border-radius: 30px;
-            font-size: 1.05em;
-        }
-        .list a:hover {
-            background: #8d1b1b;
-        }
-        .episode-num {
-            font-weight: bold;
-            color: #b71c1c;
-            min-width: 70px;
-            font-size: 1.1em;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCTV终极播放器</title>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<style>
+body{margin:0;font-family:-apple-system;background:#f5f5f5}
+.header{padding:10px;background:#fff;position:sticky;top:0}
+input{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
+video{width:100%;background:#000}
+.container{padding:10px}
+.item{display:flex;justify-content:space-between;background:#fff;padding:12px;border-radius:10px;margin-bottom:8px}
+button{background:#007aff;color:#fff;border:none;padding:6px 10px;border-radius:6px}
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- 标题部分 -->
-        <header>
-            <h1>王立群读《史记》之秦始皇</h1>
-            <p>CCTV官方·百家讲坛 全47集（2008年播出·2011年完整版独立直链）</p>
-        </header>
 
-        <!-- 全47集独立直链播放列表 -->
-        <div class="playlist-section">
-            <h2 style="text-align:center; color:#b71c1c; margin-bottom:25px;">全47集独立直链播放列表（点击即可播放）</h2>
-            <div class="list">
-                <ul>
-                    <li><span class="episode-num">第1集</span> （一）荆轲刺秦王 <a href="https://tv.cctv.com/2011/11/15/VIDE1355519871647945.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第2集</span> （二）襄公立国 <a href="https://tv.cctv.com/v/v1/VIDE1355519875171141.html" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第3集</span> （三）穆公东扩 <a href="https://tv.cctv.com/v/v2/VIDE1355519884761392.html" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第4集</span> （四）商鞅变法 <a href="https://tv.cctv.com/2011/11/18/VIDE1355519889456457.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第5集</span> （五）合纵连横 <a href="https://tv.cctv.com/2011/11/19/VIDE1355519890226467.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第6集</span> （六）昭王称霸 <a href="https://tv.cctv.com/2011/11/20/VIDE1355519879329247.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第7集</span> （七）异人奇缘 <a href="https://tv.cctv.com/2011/11/21/VIDE1355519886177412.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第8集</span> （八）生父之谜 <a href="https://tv.cctv.com/2011/11/22/VIDE1355519904689711.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第9集</span> （九）赵姬之乱 <a href="https://tv.cctv.com/2011/11/23/VIDE1355519887747435.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第10集</span> （十）吕不韦之死 <a href="https://tv.cctv.com/2011/11/24/VIDE1355519903902673.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第11集</span> （十一）李斯为政 <a href="https://tv.cctv.com/2011/11/25/VIDE1355519894802534.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第12集</span> （十二）通天大计 <a href="https://tv.cctv.com/2011/11/26/VIDE1355519876037153.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第13集</span> （十三）韩氏初兴 <a href="https://tv.cctv.com/2011/11/27/VIDE1355519900839627.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第14集</span> （十四）三家分晋 <a href="https://tv.cctv.com/2011/11/28/VIDE1355519906273733.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第15集</span> （十五）韩国之亡 <a href="https://tv.cctv.com/2011/11/29/VIDE1355519894061523.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第16集</span> （十六）赵武灵王 <a href="https://tv.cctv.com/2013/02/01/VIDE1359708341782944.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第17集</span> （十七）秦赵之争 <a href="https://tv.cctv.com/2011/12/01/VIDE1355519877730201.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第18集</span> （十八）长平之战 <a href="https://tv.cctv.com/2011/12/02/VIDE1355519896281557.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第19集</span> （十九）邯郸之战 <a href="https://tv.cctv.com/2013/02/01/VIDE1359704375640879.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第20集</span> （二十）赵国之亡 <a href="https://tv.cctv.com/2013/02/01/VIDE1359704221831578.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第21集</span> （二十一）水淹大梁 <a href="https://tv.cctv.com/2013/02/01/VIDE1359704787514324.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第22集</span> （二十二）秦灭燕国 <a href="https://tv.cctv.com/2011/12/07/VIDE1355519892529501.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第23集</span> （二十三）秦灭楚国 <a href="https://tv.cctv.com/2013/02/01/VIDE1359712473697834.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第24集</span> （二十四）不战而降 <a href="https://tv.cctv.com/2013/02/01/VIDE1359705464551759.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第25集</span> （二十五）股肱之臣 <a href="https://tv.cctv.com/2011/12/09/VIDE1355519888554446.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第26集</span> （二十六）六世余烈 <a href="https://tv.cctv.com/2011/12/10/VIDE1355519891786489.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第27集</span> （二十七）集权皇帝 <a href="https://tv.cctv.com/2013/02/01/VIDE1359706710222741.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第28集</span> （二十八）统一制度 <a href="https://tv.cctv.com/2011/12/12/VIDE1355519898575591.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第29集</span> （二十九）万里长城 <a href="https://tv.cctv.com/2011/12/13/VIDE1355519873356972.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第30集</span> （三十）生死茫茫 <a href="https://tv.cctv.com/2011/12/14/VIDE1355519885394400.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第31集</span> （三十一）焚书坑儒 <a href="https://tv.cctv.com/2011/12/15/VIDE1355519907106744.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第32集</span> （三十二）秦始皇之死 <a href="https://tv.cctv.com/2013/02/01/VIDE1359720559364318.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第33集</span> （三十三）秘不发丧 <a href="https://tv.cctv.com/2011/12/17/VIDE1355519874338122.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第34集</span> （三十四）沙丘政变 <a href="https://tv.cctv.com/2013/02/01/VIDE1359716273754985.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第35集</span> （三十五）李斯变节 <a href="https://tv.cctv.com/2011/12/19/VIDE1355519882494326.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第36集</span> （三十六）二世诈立 <a href="https://tv.cctv.com/2011/12/20/VIDE1355519876944175.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第37集</span> （三十七）巩固帝位 <a href="https://tv.cctv.com/2011/12/21/VIDE1355519900098615.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第38集</span> （三十八）李斯之死 <a href="https://tv.cctv.com/2011/12/22/VIDE1355519901638638.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第39集</span> （三十九）胡亥之死 <a href="https://tv.cctv.com/2011/12/23/VIDE1355519895532545.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第40集</span> （四十）赵高之死 <a href="https://tv.cctv.com/2011/12/24/VIDE1355519880175284.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第41集</span> （四十一）子婴亡国 <a href="https://tv.cctv.com/2011/12/25/VIDE1355519886986423.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第42集</span> （四十二）皇陵之谜 <a href="https://tv.cctv.com/2011/12/26/VIDE1355519869860919.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第43集</span> （四十三）盗陵毁陵之谜 <a href="https://tv.cctv.com/2011/12/27/VIDE1355519872480958.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第44集</span> （四十四）汉儒评秦 <a href="https://tv.cctv.com/2011/12/28/VIDE1355519907869756.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第45集</span> （四十五）唐人论秦 <a href="https://tv.cctv.com/2011/12/29/VIDE1355519903171661.shtml" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第46集</span> （四十六）千古一帝 <a href="https://tv.cctv.com/v/v1/VIDE1355519880961303.html" target="_blank">播放此集</a></li>
-                    <li><span class="episode-num">第47集</span> （四十七）难说再见 <a href="https://tv.cctv.com/2011/12/31/VIDE1355519897051568.shtml" target="_blank">播放此集</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div class="header">
+<input id="input" placeholder="粘贴CCTV链接或VID，回车">
+</div>
+
+<video id="video" controls playsinline></video>
+<div class="container" id="list"></div>
+
+<script>
+const input=document.getElementById('input');
+const list=document.getElementById('list');
+const video=document.getElementById('video');
+
+let episodes=[];
+let current=-1;
+let hls;
+
+// 提取VID
+function extractVID(url){
+  const m=url.match(/VID[A-Z0-9]+/);
+  return m?m[0]:url.trim();
+}
+
+// 自动生成连续VID（关键优化）
+function generateVIDs(baseVid,count=20){
+  const prefix=baseVid.slice(0,-6);
+  let num=parseInt(baseVid.slice(-6));
+  let list=[];
+  for(let i=0;i<count;i++){
+    list.push(prefix+(num+i));
+  }
+  return list;
+}
+
+// 获取m3u8
+async function getM3U8(vid){
+  const api=`https://vdn.apps.cntv.cn/api/getHttpVideoInfo.do?pid=${vid}`;
+  const res=await fetch(api);
+  const data=await res.json();
+  return data.hls_url;
+}
+
+async function play(i){
+  if(current===i && !video.paused){
+    video.pause();
+    return;
+  }
+  current=i;
+
+  const url=await getM3U8(episodes[i].vid);
+
+  if(hls){hls.destroy();}
+
+  if(Hls.isSupported()){
+    hls=new Hls();
+    hls.loadSource(url);
+    hls.attachMedia(video);
+  }else{
+    video.src=url;
+  }
+
+  video.play();
+}
+
+function render(){
+  list.innerHTML='';
+  episodes.forEach((ep,i)=>{
+    const div=document.createElement('div');
+    div.className='item';
+
+    const t=document.createElement('div');
+    t.innerText=ep.title;
+
+    const b=document.createElement('button');
+    b.innerText='播放';
+    b.onclick=()=>play(i);
+
+    div.appendChild(t);
+    div.appendChild(b);
+    list.appendChild(div);
+  });
+}
+
+// 自动下一集
+video.addEventListener('ended',()=>{
+  if(current+1<episodes.length){
+    play(current+1);
+  }
+});
+
+input.addEventListener('keypress',e=>{
+  if(e.key==='Enter'){
+    const vid=extractVID(input.value);
+
+    const vids=generateVIDs(vid,30);
+
+    episodes=vids.map((v,i)=>({
+      title:'第'+(i+1)+'集',
+      vid:v
+    }));
+
+    render();
+  }
+});
+</script>
+
 </body>
 </html>
